@@ -1,0 +1,25 @@
+server:
+  port : 8081
+
+logging:
+  level:
+    org.springframework.web.client.RestTemplate: DEBUG
+    org.apache.http: DEBUG
+    httpclient.wire: DEBUG
+
+messages:
+  home: Hit
+
+spring:
+  messages:
+    use-code-as-default-message: true
+    basename: messages
+    encoding: UTF-8
+
+  thymeleaf:
+    enabled: true
+    cache: false
+    check-template: true
+    check-template-location: true
+    encoding: UTF-8
+    suffix: .html
