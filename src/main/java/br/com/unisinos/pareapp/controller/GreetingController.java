@@ -2,9 +2,9 @@ package br.com.unisinos.pareapp.controller;
 
 import br.com.unisinos.pareapp.Greeting;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class GreetingController {
-    private static final Logger log = LoggerFactory.getLogger(GreetingController.class);
 
     private final RestTemplate restTemplate;
 

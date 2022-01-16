@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name=viewport content="width=device-width,initial-scale=1">
+</head>
+<body>
+<h1>This is a Board</h1>
+<div style="width: 600px; height: 550px;" id="wt-container"></div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.whiteboard.team/dist/api.js"></script>
+<script type="text/javascript">
+    var wt = new api.WhiteboardTeam('#wt-container', {
+        clientId: '69aa79698730eb57bf7459889043f24f',
+        boardCode: '69aa79698730eb57bf7459889043f24f_test',
+        name: 'test',
+        participant: {
+            role: 'editor',
+            name: 'user'
+        }
+    });
+</script>
+</html>
