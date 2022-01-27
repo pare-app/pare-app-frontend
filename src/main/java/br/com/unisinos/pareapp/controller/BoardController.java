@@ -1,6 +1,5 @@
 package br.com.unisinos.pareapp.controller;
 
-import br.com.unisinos.pareapp.Greeting;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;

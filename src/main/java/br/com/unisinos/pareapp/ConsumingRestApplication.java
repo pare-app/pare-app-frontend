@@ -18,10 +18,5 @@ public class ConsumingRestApplication {
 		SpringApplication.run(ConsumingRestApplication.class, args);
 	}
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		RestTemplate restTemplate = builder.build();
-		restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
-		return restTemplate;
-	}
+
 }
