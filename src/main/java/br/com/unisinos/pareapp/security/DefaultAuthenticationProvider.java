@@ -1,7 +1,5 @@
 package br.com.unisinos.pareapp.security;
 
-import br.com.unisinos.pareapp.client.LoginBackEndClient;
-import br.com.unisinos.pareapp.model.dto.user.ConnectionDto;
 import br.com.unisinos.pareapp.model.dto.user.LoginDto;
 import br.com.unisinos.pareapp.service.LoginService;
 import lombok.RequiredArgsConstructor;

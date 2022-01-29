@@ -1,4 +1,4 @@
-package br.com.unisinos.pareapp.client;
+package br.com.unisinos.pareapp.client.backend;
 
 import org.springframework.web.client.RestTemplate;
 

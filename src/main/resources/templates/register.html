@@ -24,7 +24,13 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center form_container">
-                <form action="#" th:action="@{/perform_login}" id="loginDto" th:object="${loginDto}" method="post">
+                <form action="#" th:action="@{/register}" id="registerDto" th:object="${registerDto}" method="post">
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text"><i class="fas fa-name"></i></span>
+                        </div>
+                        <input type="text" th:field="*{name}" name="" class="form-control input_name" value="" placeholder="name">
+                    </div>
                     <div class="input-group mb-3">
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-user"></i></span>
