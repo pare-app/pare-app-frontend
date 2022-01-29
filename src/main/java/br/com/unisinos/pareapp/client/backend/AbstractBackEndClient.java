@@ -1,33 +1,27 @@
 package br.com.unisinos.pareapp.client.backend;
 
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
 
-@RequiredArgsConstructor
+import javax.annotation.Resource;
+
 public abstract class AbstractBackEndClient <T,E> {
-    private final RestTemplate restTemplate;
-    private final Class<E> responseType;
-    private final String url = "http://localhost:8080";
-    private String path;
+    @Resource
+    private RestTemplate restTemplate;
+
+    @Value("${app.api.backend.url}")
+    private String url;
 
     public E doRequest(T requestDto){
         return restTemplate.postForObject(url + getPath(), getRequest(requestDto), getResponseType());
     }
 
-    protected Class<E> getResponseType() {
-        return responseType;
-    }
+    protected abstract Class<E> getResponseType();
 
-    private String getPath() {
-        return this.path;
-    }
-
-    protected void setPath(String path) {
-        this.path = path;
-    }
+    protected abstract String getPath();
 
     private HttpEntity<T> getRequest(T requestDto) {
         return new HttpEntity<>(requestDto, getHeaders());
