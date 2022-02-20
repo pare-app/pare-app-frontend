@@ -1,6 +1,5 @@
 package br.com.unisinos.pareapp.controller;
 
-import br.com.unisinos.pareapp.model.dto.user.ConnectionDto;
 import br.com.unisinos.pareapp.model.dto.user.LoginDto;
 import br.com.unisinos.pareapp.model.dto.user.RegisterDto;
 import br.com.unisinos.pareapp.service.RegistrationService;
@@ -20,7 +19,7 @@ public class RegistrationController {
     private final SessionService sessionService;
     private final RegistrationService registrationService;
 
-    @GetMapping("/login")
+    @GetMapping({"/login","/", ""})
     public String login(Model model) {
         if(sessionService.isLogged()) return "redirect:board";
 

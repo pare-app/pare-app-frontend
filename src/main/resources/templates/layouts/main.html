@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
+  <head>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">PareApp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" th:href="@{/css/main.css}"/>
+  </head>
+  <body>
+    <header th:insert="fragments/header :: header" class="header"></header>
+
+    <div class="master-container">
+        <div class="content">
+          <div layout:fragment="content"></div>
+        </div>
+    </div>
+
+    <footer th:insert="fragments/footer :: footer" class="footer"></footer>
+
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+
+    <th:block layout:fragment="script"></th:block>
+  </body>
+</html>

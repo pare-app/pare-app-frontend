@@ -3,9 +3,8 @@ app:
     backend:
       url: ${BACKEND_URL}
       path:
-        login: /public/login
-        register: /public/register
-        greeting: /greeting
+        login: /user/login
+        register: /user/register
 
 server:
   port : 8081

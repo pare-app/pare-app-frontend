@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authenticationProvider(authenticationProvider)
                 .authorizeRequests()
-                .antMatchers("/","/login/**","/register/**", "/home").permitAll()
+                .antMatchers("/","/login/**","/register/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()

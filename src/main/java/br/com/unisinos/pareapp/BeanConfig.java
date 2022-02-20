@@ -1,5 +1,6 @@
 package br.com.unisinos.pareapp;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,5 +21,17 @@ public class BeanConfig {
         RestTemplate restTemplate = builder.build();
         restTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
         return restTemplate;
+    }
+
+//    @Bean
+//    public SpringTemplateEngine templateEngine() {
+//        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+//        //templateEngine.addTemplateResolver(new UrlTemplateResolver());
+//        templateEngine.addDialect(new LayoutDialect());
+//        return templateEngine;
+//    }
+    @Bean
+    public LayoutDialect layoutDialect() {
+        return new LayoutDialect();
     }
 }
