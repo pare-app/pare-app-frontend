@@ -11,14 +11,15 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
+    border-radius: 20px;
 
 }
 
 .brand_logo {
-    height: 235px;
-    object-fit: scale-down;
-    width: 125px;
+    height: 200px;
+    object-fit: cover;
+    width: 150px;
+    object-position: 100% 0%;
 }
 
 .login_container {
@@ -27,4 +28,5 @@
 
 .login_btn {
     width: 100%;
+    margin: 15px;
 }
