@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class DefaultErrorController implements ErrorController {
+public class DefaultErrorController extends BaseController implements ErrorController {
 
     @GetMapping(value = "/error")
     public ModelAndView renderErrorPage(HttpServletRequest httpRequest, Model model) {
@@ -43,7 +43,7 @@ public class DefaultErrorController implements ErrorController {
             }
         }
         model.addAttribute("errorMsg", errorMsg);
-        return new ModelAndView("error",model.asMap());
+        return getView(model,"error");
     }
 
     private int getErrorCode(HttpServletRequest httpRequest) {

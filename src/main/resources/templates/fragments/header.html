@@ -3,20 +3,15 @@
       lang="en">
     <div th:fragment="header">
         <nav class="navbar navbar-expand-lg navbar-light">
-<!--            <a class="navbar-brand" href="#">-->
-<!--                <img th:src="@{/image/logo.png}" alt="">-->
-<!--            </a>-->
-<!--            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--                <span class="navbar-toggler-icon"></span>-->
-<!--            </button>-->
-<!--            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">-->
-<!--                <div class="navbar-nav">-->
-<!--                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>-->
-<!--                    <a class="nav-item nav-link" href="#">Features</a>-->
-<!--                    <a class="nav-item nav-link" href="#">Pricing</a>-->
-<!--                    <a class="nav-item nav-link disabled" href="#">Disabled</a>-->
-<!--                </div>-->
-<!--            </div>-->
+            <a class="navbar-brand" th:href="@{/}">
+                <img th:src="@{/image/logo.png}" alt="">
+            </a>
+            <div class="navbar ml-auto" >
+                <div th:if="${logged_user}" class="nav-item nav-link">
+                    <a class="logged-text" th:text="'Conectado como ' + ${logged_user.name}"></a>
+                    <a class="logout-btn btn" th:href="@{/logout}">Sair</a>
+                </div>
+            </div>
         </nav>
     </div>
 </html>
