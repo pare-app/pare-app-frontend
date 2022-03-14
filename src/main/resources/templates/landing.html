@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en" layout:decorate="~{layouts/main}">
+    <head>
+        <title>Landing Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <th:block layout:fragment="style">
+            <link type="text/css" rel="stylesheet" th:href="@{/css/landing.css}"/>
+        </th:block>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="content-container m-auto my-2">
+                            <div class="content">
+                                <span class="important-text">Ingressar em uma turma...</span>
+                                <form class="my-2" th:action="@{/classroom/join}" id="joinClassroom" th:object="${joinClassroom}" method="post">
+                                    <div class="input-group mb-3">
+                                        <input type="text" th:field="*{id}" name="" class="form-control" value="" placeholder="Código da Turma">
+                                    </div>
+                                    <button type="button" name="button" class="btn submit_btn">Enviar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="content-container m-auto">
+                            <span class="important-text">Suas turmas</span>
+                            <div class="card content-card landing-card">
+                                <div id="list">
+                                    <table class="classroom table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Dono</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody th:each="classroom : ${logged_user.classrooms}">
+                                        <tr>
+                                            <td th:text="${classroom.name}"></td>
+                                            <td th:text="${classroom.owner.name}"></td>
+                                            <td>
+                                                <a th:href="@{'/classroom/' + ${classroom.id}}" class="btn join_btn"></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <th:block layout:fragment="script">
+            <script type="text/javascript" th:src="@{/js/landing.js}"></script>
+        </th:block>
+    </body>
+</html>

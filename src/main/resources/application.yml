@@ -5,6 +5,8 @@ app:
       path:
         login: /user/login
         register: /user/register
+        classroom: /classroom
+        session: /session
 
 server:
   port : 8081

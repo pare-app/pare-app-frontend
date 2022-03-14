@@ -11,6 +11,6 @@ public class RegistrationService {
     private final RegisterBackEndClient registerBackEndClient;
 
     public void register(RegisterDto registerDto) {
-        registerBackEndClient.doRequest(registerDto);
+        registerBackEndClient.doPost(registerDto);
     }
 }

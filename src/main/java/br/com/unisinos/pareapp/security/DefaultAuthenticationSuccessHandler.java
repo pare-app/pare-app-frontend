@@ -33,7 +33,7 @@ public class DefaultAuthenticationSuccessHandler implements AuthenticationSucces
     }
 
     protected void handle(final HttpServletRequest request, final HttpServletResponse response, final Authentication authentication) throws IOException {
-        final String targetUrl = "/board";//determineTargetUrl(authentication);
+        final String targetUrl = "/";//determineTargetUrl(authentication);
 
         if (response.isCommitted()) {
             log.debug("Response has already been committed. Unable to redirect to " + targetUrl);

@@ -1,9 +1,8 @@
 package br.com.unisinos.pareapp.client.backend;
 
+import br.com.unisinos.pareapp.model.dto.BaseDto;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
+import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
@@ -15,16 +14,23 @@ public abstract class AbstractBackEndClient <T,E> {
     @Value("${app.api.backend.url}")
     private String url;
 
-    public E doRequest(T requestDto){
-        return restTemplate.postForObject(url + getPath(), getRequest(requestDto), getResponseType());
+    public E doPost(T requestDto){
+        return restTemplate.postForObject(url + getPath(), getHttpEntity(requestDto), getResponseType());
+    }
+
+    public ResponseEntity<E> doGetById(Integer id){
+        return restTemplate.exchange(url + getPath() + "/" + id, HttpMethod.GET, getHttpEntity(), getResponseType());
     }
 
     protected abstract Class<E> getResponseType();
 
     protected abstract String getPath();
 
-    private HttpEntity<T> getRequest(T requestDto) {
+    private HttpEntity<T> getHttpEntity(T requestDto) {
         return new HttpEntity<>(requestDto, getHeaders());
+    }
+    private HttpEntity<T> getHttpEntity() {
+        return new HttpEntity<>(getHeaders());
     }
 
     protected HttpHeaders getHeaders() {

@@ -3,7 +3,7 @@ package br.com.unisinos.pareapp.controller;
 import br.com.unisinos.pareapp.model.dto.user.LoginDto;
 import br.com.unisinos.pareapp.model.dto.user.RegisterDto;
 import br.com.unisinos.pareapp.service.RegistrationService;
-import br.com.unisinos.pareapp.service.SessionService;
+import br.com.unisinos.pareapp.service.HttpSessionService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-public class RegistrationController {
-    private final SessionService sessionService;
+public class RegistrationPageController {
+    private final HttpSessionService httpSessionService;
     private final RegistrationService registrationService;
 
-    @GetMapping({"/login","/", ""})
+    @GetMapping({"/login"})
     public String login(Model model) {
-        if(sessionService.isLogged()) return "redirect:board";
+        if(httpSessionService.isLogged()) return "redirect:";
 
         model.addAttribute("loginDto", new LoginDto());
         return "login";
@@ -29,7 +29,7 @@ public class RegistrationController {
 
     @GetMapping("/register")
     public String register(Model model) {
-        if(sessionService.isLogged()) return "redirect:board";
+        if(httpSessionService.isLogged()) return "redirect:";
 
         model.addAttribute("registerDto", new RegisterDto());
         return "register";

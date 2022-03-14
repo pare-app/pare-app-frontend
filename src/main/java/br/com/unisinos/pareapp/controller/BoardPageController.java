@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
 @Controller
-public class BoardController extends BaseController {
+public class BoardPageController extends BaseController {
 
     @GetMapping("/board")
     public ModelAndView initBoard(Model model) {

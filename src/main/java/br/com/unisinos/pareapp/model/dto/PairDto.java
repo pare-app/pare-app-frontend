@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PairDto {
+public class PairDto extends BaseDto {
     private ClassroomDto classroom;
     private UserDto student1;
     private UserDto student2;

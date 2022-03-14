@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en" layout:decorate="~{layouts/main}">
+    <head>
+        <title>Board</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <th:block layout:fragment="style">
+            <link type="text/css" rel="stylesheet" th:href="@{/css/board.css}"/>
+        </th:block>
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <input hidden class="board-username" th:value="${logged_user?.username}">
+            <div class="wt-board" id="wt-container"></div>
+        </div>
+        <th:block layout:fragment="script">
+            <script src="https://www.whiteboard.team/dist/api.js"></script>
+            <script type="text/javascript" th:src="@{/js/board.js}"></script>
+        </th:block>
+    </body>
+</html>

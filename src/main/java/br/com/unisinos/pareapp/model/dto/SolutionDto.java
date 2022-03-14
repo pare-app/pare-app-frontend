@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SolutionDto {
+public class SolutionDto extends BaseDto {
     private QuestionDto question;
     private byte[] image;
 }

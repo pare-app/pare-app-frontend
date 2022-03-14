@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class LoginService {
     private final LoginBackEndClient loginBackEndClient;
-    private final SessionService sessionService;
+    private final HttpSessionService httpSessionService;
 
     public boolean authenticateBackEnd(LoginDto loginDto){
-        ConnectionDto response = loginBackEndClient.doRequest(loginDto);
+        ConnectionDto response = loginBackEndClient.doPost(loginDto);
         if(response != null) {
-            sessionService.setAttribute("connection", response);
+            httpSessionService.setLoggedConnection(response);
             return Boolean.TRUE;
         }
         return Boolean.FALSE;

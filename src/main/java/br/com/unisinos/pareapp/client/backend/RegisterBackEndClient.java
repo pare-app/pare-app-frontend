@@ -1,5 +1,6 @@
 package br.com.unisinos.pareapp.client.backend;
 
+import br.com.unisinos.pareapp.client.backend.AbstractBackEndClient;
 import br.com.unisinos.pareapp.model.dto.user.ConnectionDto;
 import br.com.unisinos.pareapp.model.dto.user.RegisterDto;
 import org.springframework.beans.factory.annotation.Value;

@@ -11,7 +11,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class ExerciseDto {
+public class ExerciseDto extends BaseDto {
     private Set<ClassroomDto> classrooms;
     private Set<QuestionDto> questions;
     private Set<SessionDto> sessions;
