@@ -10,14 +10,18 @@
     </head>
     <body>
         <div layout:fragment="content">
-            <input hidden class="board-username" th:value="${logged_user.username}">
-            <input hidden class="board-pair-username" th:value="${companion.username}">
-            <input hidden class="board-exercise" th:value="${exercise.description}">
+            <input hidden class="user-username" th:value="${logged_user.username}">
+            <input hidden class="pair-id" th:value="${pair.id}">
+            <input hidden class="pair-student1-username" th:value="${pair.student2.username}">
+            <input hidden class="pair-student2-username" th:value="${pair.student1.username}">
+            <input hidden class="exercise-id" th:value="${exercise.id}">
+            <input hidden class="exercise-description" th:value="${exercise.description}">
+            <input hidden class="session-id" th:value="${session.id}">
             <div class="wt-board" id="wt-container"></div>
         </div>
         <th:block layout:fragment="script">
             <script src="https://www.whiteboard.team/dist/api.js"></script>
-            <script type="text/javascript" th:src="@{/js/board.js}"></script>
+            <script type="text/javascript" th:src="@{/js/session.js}"></script>
         </th:block>
     </body>
 </html>
