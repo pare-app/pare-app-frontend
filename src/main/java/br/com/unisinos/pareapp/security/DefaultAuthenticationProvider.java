@@ -1,7 +1,7 @@
 package br.com.unisinos.pareapp.security;
 
-import br.com.unisinos.pareapp.model.dto.user.LoginDto;
-import br.com.unisinos.pareapp.service.LoginService;
+import br.com.unisinos.pareapp.model.dto.entity.UserDto;
+import br.com.unisinos.pareapp.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 @Component
 @RequiredArgsConstructor
 public class DefaultAuthenticationProvider implements AuthenticationProvider {
-    private final LoginService loginService;
+    private final UserService userService;
 
     @Override
     public Authentication authenticate(Authentication authentication)
@@ -23,8 +23,8 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
         String username = authentication.getName();
         String password = authentication.getCredentials().toString();
 
-        LoginDto loginDto = LoginDto.builder().username(username).password(password).build();
-        if (loginService.authenticateBackEnd(loginDto)) {
+        UserDto loginDto = UserDto.builder().username(username).password(password).build();
+        if (userService.authenticateBackEnd(loginDto)) {
             return new UsernamePasswordAuthenticationToken(
                     username, password, new ArrayList<>());
         } else {

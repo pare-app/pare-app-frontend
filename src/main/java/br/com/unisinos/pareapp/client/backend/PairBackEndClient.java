@@ -1,17 +1,17 @@
 package br.com.unisinos.pareapp.client.backend;
 
-import br.com.unisinos.pareapp.model.dto.entity.ClassroomDto;
+import br.com.unisinos.pareapp.model.dto.entity.PairDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ClassroomBackEndClient extends ProtectedBackEndClient<ClassroomDto> {
-    @Value("${app.api.backend.path.classroom}")
+public class PairBackEndClient extends ProtectedBackEndClient<PairDto> {
+    @Value("${app.api.backend.path.pair}")
     private String path;
 
     @Override
-    protected Class<ClassroomDto> getResponseType() {
-        return ClassroomDto.class;
+    protected Class<PairDto> getResponseType() {
+        return PairDto.class;
     }
 
     @Override

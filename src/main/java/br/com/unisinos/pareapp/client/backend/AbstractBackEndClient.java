@@ -1,6 +1,5 @@
 package br.com.unisinos.pareapp.client.backend;
 
-import br.com.unisinos.pareapp.model.dto.BaseDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
@@ -26,10 +25,11 @@ public abstract class AbstractBackEndClient <T,E> {
 
     protected abstract String getPath();
 
-    private HttpEntity<T> getHttpEntity(T requestDto) {
+    protected HttpEntity<T> getHttpEntity(T requestDto) {
         return new HttpEntity<>(requestDto, getHeaders());
     }
-    private HttpEntity<T> getHttpEntity() {
+
+    protected HttpEntity<T> getHttpEntity() {
         return new HttpEntity<>(getHeaders());
     }
 
@@ -37,5 +37,13 @@ public abstract class AbstractBackEndClient <T,E> {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
+    }
+
+    public RestTemplate getRestTemplate() {
+        return restTemplate;
+    }
+
+    public String getUrl() {
+        return url;
     }
 }

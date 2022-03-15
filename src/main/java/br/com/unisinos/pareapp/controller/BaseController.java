@@ -1,7 +1,7 @@
 package br.com.unisinos.pareapp.controller;
 
-import br.com.unisinos.pareapp.model.dto.user.ConnectionDto;
-import br.com.unisinos.pareapp.model.dto.user.UserDto;
+import br.com.unisinos.pareapp.model.dto.ConnectionDto;
+import br.com.unisinos.pareapp.model.dto.entity.UserDto;
 import br.com.unisinos.pareapp.service.HttpSessionService;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;

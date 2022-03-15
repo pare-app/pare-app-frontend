@@ -1,9 +1,7 @@
 package br.com.unisinos.pareapp.service;
 
-import br.com.unisinos.pareapp.client.backend.ClassroomBackEndClient;
 import br.com.unisinos.pareapp.client.backend.SessionBackEndClient;
-import br.com.unisinos.pareapp.model.dto.ClassroomDto;
-import br.com.unisinos.pareapp.model.dto.SessionDto;
+import br.com.unisinos.pareapp.model.dto.entity.SessionDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class SessionService {
     private final SessionBackEndClient sessionBackEndClient;
 
-    public SessionDto getSession(Integer id) {
-        return sessionBackEndClient.doGetById(id).getBody();
+    public SessionDto getSessionByUniqueKey(Integer exerciseId, Integer pairId) {
+        return sessionBackEndClient.doGetByUniqueKey(exerciseId, pairId).getBody();
     }
 }

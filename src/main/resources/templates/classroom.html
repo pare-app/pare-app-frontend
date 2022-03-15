@@ -21,7 +21,7 @@
                                         <span class="standard-text">Olá,</span><span class="important-text" th:text="${logged_user.name}"></span><span class="standard-text">!</span>
                                     </div>
                                     <div>
-                                        <span class="standard-text">Seu par é</span><span class="important-text" th:text="@{((${pair.student1.id} == ${logged_user.id}) ? ${pair.student2.name} : ${pair.student1.name})}"></span><span class="standard-text">.</span>
+                                        <span class="standard-text">Seu par é</span><span class="important-text" th:text="${companion.name}"></span><span class="standard-text">.</span>
                                     </div>
                                 </div>
                             </div>

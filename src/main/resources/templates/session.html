@@ -10,7 +10,9 @@
     </head>
     <body>
         <div layout:fragment="content">
-            <input hidden class="board-username" th:value="${logged_user?.username}">
+            <input hidden class="board-username" th:value="${logged_user.username}">
+            <input hidden class="board-pair-username" th:value="${companion.username}">
+            <input hidden class="board-exercise" th:value="${exercise.description}">
             <div class="wt-board" id="wt-container"></div>
         </div>
         <th:block layout:fragment="script">

@@ -1,5 +1,6 @@
-package br.com.unisinos.pareapp.model.dto;
+package br.com.unisinos.pareapp.model.dto.entity;
 
+import br.com.unisinos.pareapp.model.dto.BaseDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuestionDto extends BaseDto{
+public class QuestionDto extends BaseDto {
     private String description;
     private byte[] image;
     private Set<ExerciseDto> exercises;

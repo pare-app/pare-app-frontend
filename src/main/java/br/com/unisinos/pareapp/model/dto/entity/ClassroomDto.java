@@ -1,9 +1,6 @@
-package br.com.unisinos.pareapp.model.dto;
+package br.com.unisinos.pareapp.model.dto.entity;
 
 import br.com.unisinos.pareapp.model.dto.BaseDto;
-import br.com.unisinos.pareapp.model.dto.ExerciseDto;
-import br.com.unisinos.pareapp.model.dto.PairDto;
-import br.com.unisinos.pareapp.model.dto.user.UserDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

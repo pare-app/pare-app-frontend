@@ -1,7 +1,7 @@
 package br.com.unisinos.pareapp.service;
 
-import br.com.unisinos.pareapp.model.dto.user.ConnectionDto;
-import br.com.unisinos.pareapp.model.dto.user.UserDto;
+import br.com.unisinos.pareapp.model.dto.ConnectionDto;
+import br.com.unisinos.pareapp.model.dto.entity.UserDto;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;

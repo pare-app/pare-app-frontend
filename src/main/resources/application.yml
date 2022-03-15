@@ -7,6 +7,9 @@ app:
         register: /user/register
         classroom: /classroom
         session: /session
+        exercise: /exercise
+        question: /question
+        pair: /pair
 
 server:
   port : 8081
