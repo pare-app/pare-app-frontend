@@ -2,16 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org"
       lang="en">
     <div th:fragment="header">
-        <nav class="navbar navbar-light">
-            <a class="navbar-brand" th:href="@{/}">
-                <img th:src="@{/image/logo.png}" alt="">
-            </a>
-            <div class="navbar ml-auto" >
-                <div th:if="${logged_user}" class="nav-item nav-link">
-                    <a class="logged-text d-none d-sm-inline" th:text="'Conectado como ' + ${logged_user.name}"></a>
+        <div class="container">
+            <div class="mh-logo">
+                <a th:href="@{/}">
+                    <img th:src="@{/image/logo.png}" width="170" height="95" alt="Flexbox.ninja">
+                </a>
+            </div>
+            <div th:if="${logged_user}" class="logged-space">
+                <div class="left">
+                    <span class="logged-text d-none d-sm-block" th:text="'Conectado como ' + ${logged_user.name}"></span>
+                </div>
+                <div class="right">
                     <a class="logout-btn btn" th:href="@{/logout}">Sair</a>
                 </div>
             </div>
-        </nav>
+        </div>
     </div>
 </html>

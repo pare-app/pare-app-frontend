@@ -4,6 +4,7 @@ html {
     margin: 0;
     padding: 0;
     height: 100%;
+    max-height: 100%;
     background: #EAE2D5 url("../image/bg.png");
 }
 
@@ -17,6 +18,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+}
+
+.main-header {
+    height: 10vh;
+    min-height: 85px;
 }
 
 .footer {
@@ -42,7 +48,7 @@ a:hover {
     margin-left: auto;
 }
 
-.navbar-brand img {
+.mh-logo img {
     width: 90px;
     height: 56px;
     object-fit: cover;

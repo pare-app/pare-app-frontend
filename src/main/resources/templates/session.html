@@ -14,10 +14,25 @@
             <input hidden class="pair-id" th:value="${pair.id}">
             <input hidden class="pair-student1-username" th:value="${pair.student2.username}">
             <input hidden class="pair-student2-username" th:value="${pair.student1.username}">
+            <input hidden class="question-index" th:value="${currentQuestionIndex}">
+            <input hidden class="question-total" th:value="${totalQuestions}">
+            <input hidden class="question-id" th:value="${question.id}">
+            <input hidden class="question-description" th:value="${question.description}">
             <input hidden class="exercise-id" th:value="${exercise.id}">
             <input hidden class="exercise-description" th:value="${exercise.description}">
             <input hidden class="session-id" th:value="${session.id}">
-            <div class="wt-board" id="wt-container"></div>
+            <img th:src="${question.image}">
+
+            <div class="board-content">
+                <div class="up wt-board" id="wt-container"></div>
+            </div>
+            <div class="float pb-5">
+                <div class="down">
+                    <a th:unless="${currentQuestionIndex == 0}" th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id} + '/' + ${currentQuestionIndex - 1}}" class="btn previous mr-auto">Anterior</a>
+                    <a th:unless="${!(currentQuestionIndex < totalQuestions - 1)}" th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id} + '/' + ${currentQuestionIndex + 1}}" class="btn next ml-auto">Próxima</a>
+                    <a th:unless="${!(currentQuestionIndex == totalQuestions - 1)}" th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id} + '/' + ${currentQuestionIndex - 1}}" class="btn finish ml-auto">Encerrar</a>
+                </div>
+            </div>
         </div>
         <th:block layout:fragment="script">
             <script src="https://www.whiteboard.team/dist/api.js"></script>

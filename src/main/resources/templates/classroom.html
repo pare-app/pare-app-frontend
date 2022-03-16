@@ -39,13 +39,13 @@
                                             <th scope="col"></th>
                                         </tr>
                                         </thead>
-                                        <tbody th:each="exercise : ${classroom.exercises}">
-                                        <tr>
-                                            <td th:text="${exercise.description}"></td>
-                                            <td>
-                                                <a th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id}}" class="btn join_btn"></a>
-                                            </td>
-                                        </tr>
+                                        <tbody th:each="exercise : ${classroom.exercises}" th:unless="${!exercise.hasQuestions}">
+                                            <tr>
+                                                <td th:text="${exercise.description}"></td>
+                                                <td>
+                                                    <a th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id}}" class="btn join_btn"></a>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

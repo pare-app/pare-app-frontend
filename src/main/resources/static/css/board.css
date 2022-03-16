@@ -1,5 +1,33 @@
 .wt-board {
-    height: 75vh;
-    margin: 15px;
+    height: 50vh;
     width: 90vw;
+}
+
+.board-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.board-content .up {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.float {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    bottom: 0px;
+    right: 0px;
+}
+
+.float .down {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
 }

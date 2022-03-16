@@ -17,4 +17,5 @@ public class ExerciseDto extends BaseDto {
     private Set<QuestionDto> questions;
     private Set<SessionDto> sessions;
     private String description;
+    private Boolean hasQuestions;
 }
