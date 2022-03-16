@@ -1,9 +1,8 @@
 /**
  * Images a now responsive
  */
-img {
+.mh-logo img {
     max-width: 100%;
-    height: auto;
 }
 
 /**

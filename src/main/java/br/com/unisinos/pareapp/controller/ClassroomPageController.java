@@ -4,7 +4,6 @@ import br.com.unisinos.pareapp.model.dto.entity.ClassroomDto;
 import br.com.unisinos.pareapp.model.dto.entity.PairDto;
 import br.com.unisinos.pareapp.model.dto.entity.UserDto;
 import br.com.unisinos.pareapp.service.ClassroomService;
-import br.com.unisinos.pareapp.service.HttpSessionService;
 import br.com.unisinos.pareapp.service.PairService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import java.util.Optional;
 
 @Slf4j
 @Controller

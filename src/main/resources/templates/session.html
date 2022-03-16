@@ -21,7 +21,7 @@
             <input hidden class="exercise-id" th:value="${exercise.id}">
             <input hidden class="exercise-description" th:value="${exercise.description}">
             <input hidden class="session-id" th:value="${session.id}">
-            <img th:src="${question.image}">
+<!--            <img th:src="@{'/image/question/' + ${question.id}}">-->
 
             <div class="board-content">
                 <div class="up wt-board" id="wt-container"></div>
@@ -30,7 +30,35 @@
                 <div class="down">
                     <a th:unless="${currentQuestionIndex == 0}" th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id} + '/' + ${currentQuestionIndex - 1}}" class="btn previous mr-auto">Anterior</a>
                     <a th:unless="${!(currentQuestionIndex < totalQuestions - 1)}" th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id} + '/' + ${currentQuestionIndex + 1}}" class="btn next ml-auto">Próxima</a>
-                    <a th:unless="${!(currentQuestionIndex == totalQuestions - 1)}" th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id} + '/' + ${currentQuestionIndex - 1}}" class="btn finish ml-auto">Encerrar</a>
+                    <a th:unless="${!(currentQuestionIndex == totalQuestions - 1)}" th:href="@{'/'}" class="btn finish ml-auto">Encerrar</a>
+                </div>
+            </div>
+            <button type="button" class="question-image-btn btn" data-toggle="modal" data-target="#question-image-modal">
+                <i class="fa-solid fa-image"></i>
+            </button>
+
+            <!-- The Modal -->
+            <div class="modal" id="question-image-modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title" th:text="${question.description}"></h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <img class="question-image" th:src="@{'/image/question/' + ${question.id}}">
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal">Fechar</button>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

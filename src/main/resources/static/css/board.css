@@ -23,11 +23,27 @@
     justify-content: center;
     bottom: 0px;
     right: 0px;
+    margin: 15px;
 }
 
 .float .down {
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     width: 1000px;
+}
+
+.question-image-btn {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    bottom: 57px;
+}
+
+.question-image {
+    width: 100%;
+}
+
+.modal-dialog {
+    max-width: 90%;
 }
