@@ -55,7 +55,7 @@ public class SessionPageController extends BaseController {
         model.addAttribute("companion", companion);
         model.addAttribute("pair", pairDto);
         model.addAttribute("exercise", exerciseDto);
-        model.addAttribute("session", sessionDto);
+        model.addAttribute("sessionDto", sessionDto);
         return getView(model,"session");
     }
 
