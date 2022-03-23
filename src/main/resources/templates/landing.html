@@ -12,19 +12,19 @@
         <div layout:fragment="content">
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <div class="content-container m-auto my-2">
-                            <div class="content">
-                                <span class="important-text">Ingressar em uma turma...</span>
-                                <form class="my-2" th:action="@{/classroom/join}" id="joinClassroom" th:object="${joinClassroom}" method="post">
-                                    <div class="input-group mb-3">
-                                        <input type="text" th:field="*{id}" name="" class="form-control" value="" placeholder="Código da Turma">
-                                    </div>
-                                    <button type="button" name="button" class="btn submit_btn">Enviar</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="col">-->
+<!--                        <div class="content-container m-auto my-2">-->
+<!--                            <div class="content">-->
+<!--                                <span class="important-text">Ingressar em uma turma...</span>-->
+<!--                                <form class="my-2" th:action="@{/classroom/join}" id="joinClassroom" th:object="${joinClassroom}" method="post">-->
+<!--                                    <div class="input-group mb-3">-->
+<!--                                        <input type="text" th:field="*{id}" name="" class="form-control" value="" placeholder="Código da Turma">-->
+<!--                                    </div>-->
+<!--                                    <button type="button" name="button" class="btn submit_btn">Enviar</button>-->
+<!--                                </form>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="col">
                         <div class="content-container m-auto">
                             <span class="important-text">Suas turmas</span>
@@ -43,7 +43,7 @@
                                             <td th:text="${classroom.name}"></td>
                                             <td th:text="${classroom.owner.name}"></td>
                                             <td>
-                                                <a th:href="@{'/classroom/' + ${classroom.id}}" class="btn join_btn"></a>
+                                                <a th:href="@{'/classroom/' + ${classroom.id}}" class="btn join-btn"><i class="fa-solid fa-arrow-right"></i></a>
                                             </td>
                                         </tr>
                                         </tbody>

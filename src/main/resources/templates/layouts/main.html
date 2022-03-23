@@ -7,18 +7,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link type="text/css" rel="stylesheet" th:href="@{/css/main.css}"/>
     <link type="text/css" rel="stylesheet" th:href="@{/css/header.css}"/>
     <th:block layout:fragment="style"></th:block>
   </head>
   <body>
+    <div class="loading"></div>
+
     <header th:insert="fragments/header :: header" class="main-header"></header>
 
-    <div class="master-container" layout:fragment="content"></div>
+    <div class="master-container" style="display: none" layout:fragment="content"></div>
 
-    <footer th:insert="fragments/footer :: footer" class="footer"></footer>
+    <footer th:insert="fragments/footer :: footer" class="footer" style="display: none"></footer>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/loading.js}"></script>
     <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/1722be8efa.js" crossorigin="anonymous"></script>
     <script type="text/javascript" th:src="@{/js/main.js}"></script>
