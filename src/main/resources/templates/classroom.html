@@ -35,8 +35,8 @@
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
-                                <tbody th:each="exercise : ${classroom.exercises}" th:unless="${!exercise.hasQuestions}">
-                                    <tr>
+                                <tbody>
+                                    <tr th:each="exercise : ${classroom.exercises}" th:unless="${!exercise.hasQuestions}">
                                         <td th:text="${exercise.description}"></td>
                                         <td>
                                             <a th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id}}" class="btn join-btn"><i class="fa-solid fa-arrow-right"></i></a>
