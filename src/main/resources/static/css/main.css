@@ -72,6 +72,7 @@ a:hover {
     width: 30px;
     justify-content: center;
     display: flex;
+    margin-left: auto;
 }
 
 .join-btn::before {
@@ -104,9 +105,6 @@ a:hover {
     flex-direction: column;
     padding: 20px;
     border: none;
-    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-    /*-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-    /*-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
     border-radius: 20px;
 }
 
@@ -123,7 +121,7 @@ th, td {
 }
 
 .content-container {
-    width: 350px;
+    max-width: 800px;
     margin: auto;
 }
 

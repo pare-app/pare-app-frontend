@@ -11,45 +11,39 @@
     <body>
         <div layout:fragment="content">
             <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="content-container m-auto my-2">
-                            <div class="content">
-                                <h1 th:text="@{${classroom.name}}"></h1>
-                                <div>
-                                    <div>
-                                        <span class="standard-text">Olá,</span><span class="important-text" th:text="${logged_user.name}"></span><span class="standard-text">!</span>
-                                    </div>
-                                    <div>
-                                        <span class="standard-text">Seu par é</span><span class="important-text" th:text="${companion.name}"></span><span class="standard-text">.</span>
-                                    </div>
-                                </div>
+                <div class="content-container my-4">
+                    <div class="content">
+                        <h1 th:text="@{${classroom.name}}"></h1>
+                        <div>
+                            <div>
+                                <span class="standard-text">Olá,</span><span class="important-text" th:text="${logged_user.name}"></span><span class="standard-text">!</span>
+                            </div>
+                            <div>
+                                <span class="standard-text">Seu par é</span><span class="important-text" th:text="${companion.name}"></span><span class="standard-text">.</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="content-container m-auto">
-                            <span class="important-text">Exercícios</span>
-                            <div class="card content-card classroom-card">
-                                <div id="list">
-                                    <table class="exercise table">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col">Descrição</th>
-                                            <th scope="col"></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody th:each="exercise : ${classroom.exercises}" th:unless="${!exercise.hasQuestions}">
-                                            <tr>
-                                                <td th:text="${exercise.description}"></td>
-                                                <td>
-                                                    <a th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id}}" class="btn join-btn"><i class="fa-solid fa-arrow-right"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                </div>
+                <div class="content-container">
+                    <span class="important-text">Exercícios</span>
+                    <div class="card content-card classroom-card">
+                        <div id="list">
+                            <table class="exercise table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col"></th>
+                                </tr>
+                                </thead>
+                                <tbody th:each="exercise : ${classroom.exercises}" th:unless="${!exercise.hasQuestions}">
+                                    <tr>
+                                        <td th:text="${exercise.description}"></td>
+                                        <td>
+                                            <a th:href="@{'/session/' + ${exercise.id} + '/' + ${pair.id}}" class="btn join-btn"><i class="fa-solid fa-arrow-right"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
