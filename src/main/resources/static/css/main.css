@@ -21,6 +21,10 @@ body {
     align-items: flex-start;
 }
 
+.container {
+    background-color: transparent !important;
+}
+
 .main-header {
     height: 10vh;
     min-height: 85px;
