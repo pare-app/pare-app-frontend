@@ -6,6 +6,7 @@ import br.com.unisinos.pareapp.model.dto.ConnectionDto;
 import br.com.unisinos.pareapp.model.dto.entity.UserDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 
 @Service
 @RequiredArgsConstructor
@@ -14,11 +15,15 @@ public class UserService {
     private final LoginBackEndClient loginBackEndClient;
     private final HttpSessionService httpSessionService;
 
-    public boolean authenticateBackEnd(UserDto loginDto){
-        ConnectionDto response = loginBackEndClient.doPost(loginDto);
-        if(response != null) {
-            httpSessionService.setLoggedConnection(response);
-            return Boolean.TRUE;
+    public boolean authenticateBackEnd(UserDto loginDto) {
+        try {
+            ConnectionDto response = loginBackEndClient.doPost(loginDto);
+            if (response != null) {
+                httpSessionService.setLoggedConnection(response);
+                return Boolean.TRUE;
+            }
+        } catch (HttpClientErrorException e) {
+            return Boolean.FALSE;
         }
         return Boolean.FALSE;
     }

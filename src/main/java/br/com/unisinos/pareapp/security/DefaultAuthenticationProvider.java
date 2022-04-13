@@ -27,9 +27,9 @@ public class DefaultAuthenticationProvider implements AuthenticationProvider {
         if (userService.authenticateBackEnd(loginDto)) {
             return new UsernamePasswordAuthenticationToken(
                     username, password, new ArrayList<>());
-        } else {
-            return null;
         }
+
+        return null;
     }
 
     @Override
