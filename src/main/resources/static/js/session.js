@@ -1,3 +1,5 @@
+
+$('#question-image-modal').modal('show');
 var boardId =  $('.session-id').val() + '-' + $('.question-id').val();
 
 var wt = new api.WhiteboardTeam('#wt-container', {
