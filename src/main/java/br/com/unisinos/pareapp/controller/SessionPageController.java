@@ -44,17 +44,13 @@ public class SessionPageController extends BaseController {
                                 @PathVariable(name = "pairId") Integer pairId,
                                 @PathVariable(name = "questionIndex") Integer questionIndex) {
         SessionDto sessionDto = sessionService.getSessionByUniqueKey(exerciseId,pairId);
-        ExerciseDto exerciseDto = exerciseService.get(exerciseId);
         List<QuestionDto> questionDtos = exerciseService.doGetQuestions(exerciseId);
-        PairDto pairDto = pairService.get(pairId);
-        UserDto companion = pairService.getCompanionFromPair(pairDto).orElse(new UserDto());
 
+        model.addAttribute("exerciseId", exerciseId);
+        model.addAttribute("pairId", pairId);
         model.addAttribute("totalQuestions", questionDtos.size());
         model.addAttribute("currentQuestionIndex", questionIndex);
         model.addAttribute("question", questionDtos.get(questionIndex));
-        model.addAttribute("companion", companion);
-        model.addAttribute("pair", pairDto);
-        model.addAttribute("exercise", exerciseDto);
         model.addAttribute("sessionDto", sessionDto);
         return getView(model,"session");
     }
