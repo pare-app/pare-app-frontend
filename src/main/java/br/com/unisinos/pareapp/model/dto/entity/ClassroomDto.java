@@ -14,7 +14,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class ClassroomDto extends BaseDto {
     private String name;
-    private UserDto owner;;
+    private UserDto owner;
     private Set<UserDto> students;
     private Set<ExerciseDto> exercises;
     private Set<PairDto> pairs;
