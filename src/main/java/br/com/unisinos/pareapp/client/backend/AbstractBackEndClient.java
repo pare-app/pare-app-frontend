@@ -1,11 +1,13 @@
 package br.com.unisinos.pareapp.client.backend;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
 
+@Slf4j
 public abstract class AbstractBackEndClient <T,E> {
     @Resource
     private RestTemplate restTemplate;
@@ -14,10 +16,12 @@ public abstract class AbstractBackEndClient <T,E> {
     private String url;
 
     public E doPost(T requestDto){
+        log.debug("POST; Type -> " + getResponseType().getName() + "; Body ->" + requestDto.toString());
         return restTemplate.postForObject(url + getPath(), getHttpEntity(requestDto), getResponseType());
     }
 
     public ResponseEntity<E> doGetById(Integer id){
+        log.debug("GET; Type -> " + getResponseType().getName() + "; ID -> " + id);
         return restTemplate.exchange(url + getPath() + "/" + id, HttpMethod.GET, getHttpEntity(), getResponseType());
     }
 
