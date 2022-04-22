@@ -22,7 +22,7 @@ public class UserService {
                 httpSessionService.setLoggedConnection(response);
                 return Boolean.TRUE;
             }
-        } catch (HttpClientErrorException e) {
+        } catch (Exception e) {
             return Boolean.FALSE;
         }
         return Boolean.FALSE;
