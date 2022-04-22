@@ -1,7 +1,7 @@
 app:
   api:
     backend:
-      url: ${BACKEND_URL}
+      url: https://maximal-yew-347818.rj.r.appspot.com
       path:
         login: /user/login
         register: /user/register
@@ -36,3 +36,10 @@ spring:
     check-template-location: true
     encoding: UTF-8
     suffix: .html
+
+  cloud:
+    gcp:
+      project-id: pareapp-frontend
+#      credentials:
+#        location: file:[LOCAL_PRIVATE_KEY_FILE]
+#        scopes: [SCOPE_1],[SCOPE_2],[SCOPE_3]
